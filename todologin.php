@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->fetch();
 
             // DEBUG: Print the stored hashed password
-            echo "Stored Hashed Password: " . $hashed_password . "<br>";
+            //echo "Stored Hashed Password: " . $hashed_password . "<br>";
 
             // Verify password
             if (password_verify($password, $hashed_password)) {
