@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+error_reporting(E_ALL); // Report all errors and warning
+ini_set('display_erros', 1); //Display errors on the screen
+
 $dbhostname = 'sql8.freesqldatabase.com';
 $dbdatabase = 'sql8768322';
 $dbuser = 'sql8768322';
