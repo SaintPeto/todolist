@@ -8,9 +8,10 @@ $dbhostname = 'sql8.freesqldatabase.com';
 $dbdatabase = 'sql8768322';
 $dbuser = 'sql8768322';
 $dbpass = 'Ww4g9YhH1k';
+$port = '3306';
 
 // Connect to the database
-$conn = new mysqli($dbhostname, $dbuser, $dbpass, $dbdatabase);
+$conn = new mysqli($dbhostname, $dbuser, $dbpass, $dbdatabase, $port);
 
 // Check connection
 if ($conn->connect_error) {
