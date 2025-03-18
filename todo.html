@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do List</h2>
+        
+        <form action="add_task.php" method="POST">
+            <input type="text" name="no" placeholder="Enter number" required>
+            <textarea name="task" id="taskInput" rows="3" placeholder="Enter a new task (Press Enter for a new line, Ctrl + Enter to submit)" required onkeydown="handleEnter(event)"></textarea>
+            <button type="submit">Add Task</button>
+        </form>
+
+      
+    </div>
+</body>
+</html>

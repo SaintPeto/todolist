@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freepik Login</title>
+    <link rel="stylesheet" href="todologin.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="image.jpg" alt="Background Image">
+        </div>
+        <div class="right">
+            <h2 class="logo">FREEPIK</h2>
+            <h4>Log in</h4>
+            <p>Welcome back!</p>
+
+            <form action="todologin.php" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Log in</button>
+            </form>
+
+            <div class="profile">
+                <p class="switch">Not you? <a href="#">Use another account</a></p> 
+                <p class="signup">Don't have an account? <a href="todosignup.html">Sign up</a></p>
+               
+            </div>
+        </div>
+    </div>
+</body>
+</html>
