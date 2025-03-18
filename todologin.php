@@ -2,7 +2,7 @@
 session_start();
 
 error_reporting(E_ALL); // Report all errors and warning
-ini_set('display_erros', 1); //Display errors on the screen
+ini_set('display_errors', 1); // Fix typo in ini_set
 
 $dbhostname = 'sql8.freesqldatabase.com';
 $dbdatabase = 'sql8768322';
@@ -26,12 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check for empty fields inside the request check
     if (empty($username) || empty($password)) {
-        die("⚠️ Username and password cannot be empty.");
+        exit("⚠️ Username and password cannot be empty.");
     }
 
     // Sanitize username to prevent SQL injection
     $username = mysqli_real_escape_string($conn, $username);
-    $password = mysqli_real_escape_string($conn, $password);
 
     // Prepare SQL statement
     $stmt = $conn->prepare("SELECT password FROM tblusers WHERE username = ?");
@@ -45,25 +44,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_result($hashed_password);
             $stmt->fetch();
 
-            // DEBUG: Print the stored hashed password
-            //echo "Stored Hashed Password: " . $hashed_password . "<br>";
-
             // Verify password
             if (password_verify($password, $hashed_password)) {
-                echo "✅ Password matches! Redirecting...";
                 $_SESSION["username"] = $username;
-                header("refresh:2; url=todo.html"); // Redirect to display page after 2 seconds
+                header("Location: todo.html"); // Redirect immediately
                 exit();
             } else {
-                echo "❌ Invalid password!";
+                exit("❌ Invalid password!");
             }
         } else {
-            echo "❌ No user found!";
+            exit("❌ No user found!");
         }
 
         $stmt->close();
     } else {
-        echo "❌ Error preparing SQL statement: " . $conn->error;
+        exit("❌ Error preparing SQL statement: " . $conn->error);
     }
 }
 
