@@ -2,10 +2,10 @@
 //session_start();
 
 // Database connection details
-$dbhostname = 'localhost';
-$dbdatabase = 'db_todolist';
-$dbuser = 'root';
-$dbpass = '';
+$dbhostname = 'sql8.freesqldatabase.com';
+$dbdatabase = 'sql8768322';
+$dbuser = 'sql8768322';
+$dbpass = 'Ww4g9YhH1k';
 
 // Connect to the database
 $conn = new mysqli($dbhostname, $dbuser, $dbpass, $dbdatabase);
