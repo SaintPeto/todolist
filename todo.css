@@ -1,85 +1,115 @@
+/* 🎨 General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    box-sizing: border-box;
-}
-
-h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    padding: 20px;
 }
 
+/* 📌 Todo Container */
+.todo-container {
+    max-width: 400px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+/* 📝 Heading */
+h2 {
+    margin-bottom: 15px;
+    color: #6a11cb;
+}
+
+/* ✍ Form Styling */
 form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    gap: 10px;
 }
 
-input[type="text"][name="no"] {
-    width: 100px;
+input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-
-input[type="text"][name="task"] {
-    width: 100%;
-    height: 100px; /* Increased height */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
     font-size: 16px;
-    background-color: #4CAF50;
-    color: #fff;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background-color: #f9f9f9;
-    padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+/* ➕ Add Task Button */
+button {
+    background: #6a11cb;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2575fc;
+}
+
+/* 📌 Task List */
+#taskList, #completedTasks {
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* 📝 Task Item */
+.task-item {
+    background: #f8f9fa;
+    color: #333;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
 }
 
-a {
-    color: #f44336;
-    text-decoration: none;
+/* ✔ Completed Task */
+.completed {
+    background: #d4edda;
+    text-decoration: line-through;
+    color: #155724;
 }
 
-a:hover {
-    text-decoration: underline;
+/* 🎯 Buttons */
+.button-group button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+.complete-btn {
+    color: green;
+    font-weight: bold;
+}
+
+.complete-btn:hover {
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    color: red;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
 }
