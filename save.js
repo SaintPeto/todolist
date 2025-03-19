@@ -21,11 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// ✅ Loads tasks from localStorage and displays them correctly
 function loadTasks() {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     let taskList = document.getElementById("taskList");
     let completedTasks = document.getElementById("completedTasks");
 
+    // Clear the existing UI before rendering new data
     taskList.innerHTML = "";
     completedTasks.innerHTML = "";
 
@@ -41,6 +43,7 @@ function loadTasks() {
             </span>
         `;
 
+        // ✅ Append task to the correct section
         if (task.completed) {
             div.classList.add("completed");
             completedTasks.appendChild(div);
@@ -50,6 +53,7 @@ function loadTasks() {
     });
 }
 
+// ✅ Mark a task as completed
 function completeTask(index) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks[index].completed = true;
@@ -57,6 +61,7 @@ function completeTask(index) {
     loadTasks();
 }
 
+// ✅ Delete a task
 function deleteTask(index) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.splice(index, 1);
