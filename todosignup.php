@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the statement
     if ($stmt->execute()) {
         echo "Registration Successful! <br>";
-        echo "<a href='todologin.html'>Click here to Login</a>"; // Redirect to login page
+        echo "<a href='index.html'>Click here to Login</a>"; // Redirect to login page
     } else {
         echo "Error: " . $stmt->error;
     }
